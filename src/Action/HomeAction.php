@@ -13,24 +13,14 @@ final class HomeAction
     ): ResponseInterface {
         
         $result = json_encode([
-            'success' => true, 
-            'message' => 'Hello world!'
+            'message' => 'Bon examen à tous!!'
         ]);
         
         $response->getBody()->write($result);
 
-        return $response->withHeader('Content-Type', 'application/json');
+        return $response
+            ->withHeader('Content-Type', 'application/json')
+            ->withStatus(200);
         
-        /**
-         * Changer le code de statut de la réponse
-         * 
-         * return $response
-         *          ->withHeader('Content-Type', 'application/json')
-         *          ->withStatus(422);
-         * 
-         */
-
-
-        return $response;
     }
 }

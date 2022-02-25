@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Services Web H2022 - Examen 1
+  description: Api de l'examen 1 du cours de Services Web H2022. L'Api interroge une base de données de séries et films de la plateforme Netflix
+  
+servers: 
+  - url: http://localhost/sw_h2022_examen1
+paths:
+  /:
+    get:
+      tags:
+        - Général
+      summary: Message de bienvenue
+      responses:
+        '200': 
+          description: 
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                    message : 'Bon examen à tous!!'
