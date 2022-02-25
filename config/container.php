@@ -7,6 +7,7 @@ use Slim\Middleware\ErrorMiddleware;
 use Selective\BasePath\BasePathMiddleware;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
+use App\Factory\LoggerFactory;
 
 return [
     'settings' => function () {

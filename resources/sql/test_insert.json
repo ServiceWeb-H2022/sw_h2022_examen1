@@ -1,0 +1,13 @@
+{
+    "show_type" : "TV Show",
+    "title" : "Test création",
+    "director" : "",
+    "actors" : "acteur 1, acteur 2, acteur 3",
+    "country": "Canada",
+    "date_added" : "February 25, 2022",
+    "release_year" : 2022,
+    "rating" : "PG-13",
+    "duration" : "3 Seasons",
+    "listed_in" : "categorie 1, categorie 2",
+    "description" : "Exemple de titre pour tester la création"
+}

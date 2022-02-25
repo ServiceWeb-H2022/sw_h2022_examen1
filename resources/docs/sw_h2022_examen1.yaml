@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Services Web H2022 - Examen 1
+  description: Api de l'examen 1 du cours de Services Web H2022. L'Api interroge une base de données de séries et films de la plateforme Netflix
+  
+servers: 
+  - url: http://localhost/sw_h2022_examen1
+paths:
+  /:
+    get:
+      tags:
+        - Général
+      summary: Message de bienvenue
+      responses:
+        '200': 
+          description: 
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                    message : 'Bon examen à tous!!'
+
+  /titres/{id}:
+    get:
+      tags:
+        - Titres
+      summary: Affiche un titre selon son id.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Le id du titre à afficher
+          schema:
+            type: integer
+      responses:
+        '200': 
+          description: Le titre à afficher
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Titre'
+
+components:
+  schemas:
+    
+    Titre:
+      type: object
+      required:
+        - genreId
+        - titre
+        - isbn
+      properties:
+        show_id:
+          type: integer
+          format: int64
+        show_type:
+          type: string
+        title:
+          type: string
+        director:
+          type: string
+        actors:
+          type: array
+        duration:
+          type: string
+        listed_in:
+          type: array
+        description: 
+          type: string
+      example:
+          show_id: 2328
+          show_type: "TV Show"
+          title: "Dark"
+          director: ""
+          actors: [
+            "Louis Hofmann",
+            "Oliver Masucci",
+            "Jördis Triebel",
+            "Maja Schöne",
+            "Karoline Eichhorn",
+            "..."
+            ]
+          duration: "3 Seasons"
+          listed_in: [
+              "Crime TV Shows", 
+              "International TV Shows", 
+              "TV Dramas"
+          ]
+          description: "A missing child sets four families on a frantic hunt for answers as they unearth a mind-bending mystery that spans three generations."
