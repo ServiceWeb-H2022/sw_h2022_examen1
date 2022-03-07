@@ -14,7 +14,7 @@ return function (App $app) {
     $app->get('/titres/{id}', \App\Action\Titre\TitreViewAction::class);
     // Question #2 - Ajouter un titre
     $app->post('/titres', \App\Action\Titre\TitreCreateAction::class);
-    // Questioni #3 - Afficher une liste de films ou séries
+    // Questioni #3 - Afficher une liste de films ou de séries
     $app->get('/titres', \App\Action\Titre\TitreViewWithFilterAction::class);
 
 

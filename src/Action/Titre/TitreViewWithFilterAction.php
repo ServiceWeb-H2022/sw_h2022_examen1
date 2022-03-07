@@ -25,7 +25,6 @@ final class TitreViewWithFilterAction
         
         $resutlat = $this->titreView->viewFilteredTitle($params);
 
-
         $response->getBody()->write((string)json_encode($resutlat));
 
         return $response->withHeader('Content-Type', 'application/json');

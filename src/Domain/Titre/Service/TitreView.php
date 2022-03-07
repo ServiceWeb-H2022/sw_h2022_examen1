@@ -32,7 +32,9 @@ final class TitreView
 
     /**
      * Affiche un titre selon son id
-     *
+     * 
+     * @param int Le id du titre à sélectionner
+     * 
      * @return array Les informations du titre sélectionné
      */
     public function viewTitleById(int $id): array
@@ -40,8 +42,8 @@ final class TitreView
         $title = $this->repository->selectTitleById($id);
 
         if(!empty($title)) {
-            $title['actors'] = explode(",", $title['actors']);
-            $title['listed_in'] = explode(",", $title['listed_in']);
+            $title['actors'] = array_map('trim', explode(",", $title['actors']));
+            $title['listed_in'] = array_map('trim', explode(",", $title['listed_in']));
         }
 
         return $title;

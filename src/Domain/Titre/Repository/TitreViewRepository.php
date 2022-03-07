@@ -65,7 +65,6 @@ class TitreViewRepository
                     'id' => $id,
                 ];
 
-
         $sql = "select * from netflix_titles where show_id = :id;";
 
         $query = $this->connection->prepare($sql);
